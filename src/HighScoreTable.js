@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import scores from "./scores";
 import PlayerScore from "./PlayerScore";
 import SortButton from "./SortButton";
 import "./HighScoreTable.css";
 
-function HighScoreTable() {
-  let finalScores = scores.sort((a, b) => (a.name > b.name ? 1 : -1));
+function HighScoreTable(props) {
+  let finalScores = props.scores.sort((a, b) => (a.name > b.name ? 1 : -1));
 
   const [currentOrder, setOrder] = useState(true);
 
